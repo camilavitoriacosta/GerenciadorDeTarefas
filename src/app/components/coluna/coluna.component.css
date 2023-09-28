@@ -1,5 +1,14 @@
+.colunas {
+  display: flex;
+  gap: 10px;
+}
+
 .container-coluna {
   background-color: #FAF7FE;
+  width: 25%;
+  min-width: 250px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .coluna-cabecalho {
