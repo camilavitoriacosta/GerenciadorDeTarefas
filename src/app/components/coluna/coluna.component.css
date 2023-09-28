@@ -1,0 +1,28 @@
+.container-coluna {
+  background-color: #FAF7FE;
+}
+
+.coluna-cabecalho {
+  background-color: #E8DDFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.coluna-titulo {
+  margin: 0;
+  padding: 0;
+  color: #613D7D;
+}
+
+.coluna-numero-tarefas {
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  color: #FAF7FE;
+  border-radius: 50%;
+  background-color: #8E80E7;
+  text-align: center;
+}

@@ -1,1 +1,8 @@
-<p>coluna works!</p>
+<div class="container-coluna" *ngFor="let coluna of colunas">
+  <div class="coluna-cabecalho">
+    <h1 class="coluna-titulo"> {{coluna.nome}} </h1>
+    <span class="coluna-numero-tarefas"> 2 </span>
+  </div>
+  <app-botao-com-icone></app-botao-com-icone>
+  <app-tarefa></app-tarefa>
+</div>
