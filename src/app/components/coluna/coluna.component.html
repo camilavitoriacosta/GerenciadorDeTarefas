@@ -5,6 +5,6 @@
       <span class="coluna-numero-tarefas"> 2 </span>
     </div>
     <app-botao-com-icone></app-botao-com-icone>
-    <app-tarefa *ngFor="let tarefa of coluna.tarefas"></app-tarefa>
+    <app-tarefa *ngFor="let tarefa of coluna.tarefas" [tarefa]="tarefa"></app-tarefa>
   </div>
 </section>

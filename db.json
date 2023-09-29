@@ -1,46 +1,48 @@
 {
   "colunas": [
     {
-      "id": 0,
+      "id": 1,
       "nome": "Coluna 01",
-      "cor": "roxo",
-      "tarefas": [
-        {
-          "id": 0,
-          "titulo": "Tarefa 01",
-          "data": "29/09/2023",
-          "horario": "",
-          "finalizada": true
-        },
-        {
-          "id": 0,
-          "titulo": "Tarefa 02",
-          "data": "29/09/2023",
-          "horario": "",
-          "finalizada": false
-        }
-      ]
+      "cor": "roxo"
     },
     {
-      "id": 0,
+      "id": 2,
       "nome": "Coluna 02",
-      "cor": "vermelho",
-      "tarefas": [
-        {
-          "id": 0,
-          "titulo": "Tarefa 01",
-          "data": "29/09/2023",
-          "horario": "",
-          "finalizada": true
-        },
-        {
-          "id": 0,
-          "titulo": "Tarefa 02",
-          "data": "29/09/2023",
-          "horario": "",
-          "finalizada": false
-        }
-      ]
+      "cor": "vermelho"
+    }
+  ],
+  "tarefas": [
+    {
+      "id": 1,
+      "titulo": "Tarefa 01",
+      "data": "29/09/2023",
+      "horario": "",
+      "finalizada": true,
+      "coluna_id": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Tarefa 02",
+      "data": "29/09/2023",
+      "horario": "",
+      "finalizada": true,
+      "coluna_id": 1
+    },
+    {
+      "id": 3,
+      "titulo": "Tarefa 03",
+      "data": "29/09/2023",
+      "horario": "09:30",
+      "finalizada": false,
+      "coluna_id": 2
+    },
+    {
+      "id": 4,
+      "titulo": "Tarefa 04",
+      "data": "29/09/2023",
+      "horario": "",
+      "finalizada": false,
+      "coluna_id": 2
     }
   ]
 }
