@@ -1,0 +1,69 @@
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  min-width: 320px;
+  position: fixed;
+  left: 50%;
+  padding: 24px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  background: #000;
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+}
+
+.modal-x {
+  align-self: end;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-cabecalho>.modal-input {
+  font-size: 18px;
+}
+
+.modal-campo {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.modal-label {
+  width: 100px;
+  color: #595858;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.modal-input {
+  border: none;
+}
+
+.modal-botao{
+  background-color: #E8DDFF;
+  border: none;
+  border-radius: 5px;
+  color: #613D7D;
+  font-weight: bold;
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+}

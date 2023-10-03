@@ -1,4 +1,4 @@
-<section class="colunas">
+<section class="colunas" (click)="modal.toggle()">
   <div class="container-coluna" *ngFor="let coluna of colunas">
     <div class="coluna-cabecalho">
       <h1 class="coluna-titulo"> {{coluna.nome}} </h1>
@@ -8,3 +8,5 @@
     <app-tarefa *ngFor="let tarefa of coluna.tarefas" [tarefa]="tarefa"></app-tarefa>
   </div>
 </section>
+
+<app-modal-tarefa #modal></app-modal-tarefa>
