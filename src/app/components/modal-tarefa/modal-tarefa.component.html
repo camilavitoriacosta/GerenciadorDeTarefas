@@ -3,19 +3,19 @@
     <form [formGroup]="formTarefa" class="formulario">
       <div class="modal-cabecalho">
         <input class="modal-input finalizada" type="checkbox" formControlName="finalizada" name="finalizada">
-        <input class="modal-input" value="{{tarefa.titulo}}" placeholder="Titulo" />
+        <input class="modal-input" value="{{tarefa.titulo}}" placeholder="Titulo" formControlName="titulo" />
       </div>
       <div class="modal-campo">
         <label class="modal-label"> <i-bs name="calendar-event" width="75" height="75">
           </i-bs> Data </label>
-        <input type="date" class="modal-input" value="{{tarefa.data}}">
+        <input type="date" class="modal-input" value="{{tarefa.data}}" formControlName="data">
       </div>
       <div class="modal-campo">
         <label class="modal-label"><i-bs name="clock" width="75" height="75">
           </i-bs> Horário</label>
-        <input type="time" class="modal-input" value="{{tarefa.horario}}">
+        <input type="time" class="modal-input" value="{{tarefa.horario}}" formControlName="horario">
       </div>
-      <button class="modal-botao"> Salvar </button>
+      <button class="modal-botao" (click)="onSubmit()"> Salvar </button>
     </form>
   </div>
   <div class="overlay" (click)="toggle()"></div>

@@ -4,4 +4,5 @@ export interface Tarefa {
   "data": string | Date,
   "horario": string,
   "finalizada": boolean,
+  "coluna_id": number
 }

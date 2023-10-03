@@ -10,23 +10,44 @@ import { TarefaService } from 'src/app/services/tarefa.service';
 })
 
 export class ModalTarefaComponent {
+  @Input() tarefa: Tarefa = {
+    id: 0,
+    titulo: '',
+    data: '',
+    horario: '',
+    finalizada: false,
+    coluna_id: 0
+  };
   formTarefa!: FormGroup;
-  @Input() tarefa!: Tarefa;
-
   mostrar: boolean = false;
+  coluna_id!: number;
 
-  
   constructor(private formBuilder: FormBuilder, private tarefaService: TarefaService) {
-    // this.tarefa = {
-    //   id: 0,
-    //   "titulo": "Teste",
-    //   "data": new Date("29/09/2023"),
-    //   "horario": "09:30",
-    //   "finalizada": false,
-    // }
+    this.formTarefa = this.formBuilder.group({
+      id: [this.tarefa.id],
+      titulo: [this.tarefa.titulo],
+      horario: [this.tarefa.horario],
+      data: [this.tarefa.data],
+      finalizada: [this.tarefa.finalizada],
+      coluna_id: [this.tarefa.coluna_id]
+    })
+    this.coluna_id = this.tarefa ? this.tarefa.coluna_id : 0;
   }
 
   toggle() {
     this.mostrar = !this.mostrar;
+  }
+
+  abrir(coluna_id: number) {
+    this.coluna_id = coluna_id;
+    this.toggle();
+  }
+
+  onSubmit() {
+    this.tarefa = this.formTarefa.value;
+    this.tarefa.coluna_id = this.coluna_id;
+    this.tarefaService.post(this.tarefa).subscribe((tarefas) => {
+      this.toggle();
+    })
   }
 }

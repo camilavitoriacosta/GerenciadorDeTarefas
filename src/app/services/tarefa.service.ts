@@ -17,4 +17,8 @@ export class TarefaService {
   put(tarefa: Tarefa): Observable<Tarefa> {
     return this.http.put<Tarefa>(this.apiUrl + "/" + tarefa.id, tarefa);
   }
+
+  post(tarefa: Tarefa): Observable<Tarefa> {
+    return this.http.post<Tarefa>(this.apiUrl, tarefa);
+  }
 }
