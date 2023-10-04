@@ -14,11 +14,9 @@ export class ModalTarefaComponent {
   @Input() tarefa: Tarefa = this.inicializarTarefa();
   formTarefa!: FormGroup;
   mostrar: boolean = false;
-  coluna_id!: number | null;
   edicao: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private tarefaService: TarefaService) {
-    this.coluna_id = this.tarefa ? this.tarefa.coluna_id : null;
   }
 
   ngOnInit() {
@@ -33,22 +31,19 @@ export class ModalTarefaComponent {
   }
 
   toggle() {
+    this.resetarVariaveis();
     this.mostrar = !this.mostrar;
-    this.resetarVariaveis()
   }
 
   abrir(coluna_id: number) {
-    this.coluna_id = coluna_id;
     this.toggle();
+    this.formTarefa.controls['coluna_id'].setValue(coluna_id);
   }
 
-  abrirModoEdicao(coluna_id: number, tarefa: Tarefa) {
+  abrirModoEdicao(tarefa: Tarefa) {
     this.toggle();
-    this.coluna_id = coluna_id;
     this.edicao = true;
     this.preencherCampos(tarefa);
-    console.log(this.coluna_id);
-
   }
 
   preencherCampos(tarefa: Tarefa) {
@@ -57,6 +52,7 @@ export class ModalTarefaComponent {
     this.formTarefa.controls['horario'].setValue(tarefa.horario);
     this.formTarefa.controls['data'].setValue(tarefa.data);
     this.formTarefa.controls['finalizada'].setValue(tarefa.finalizada);
+    this.formTarefa.controls['coluna_id'].setValue(tarefa.coluna_id);
   }
 
   onSubmit() {
@@ -68,7 +64,6 @@ export class ModalTarefaComponent {
       })
     }
     else {
-      this.tarefa.coluna_id = this.coluna_id;
       this.tarefaService.post(this.tarefa).subscribe((tarefas) => {
         this.toggle();
         this.handleAtualizarLista();
@@ -78,7 +73,6 @@ export class ModalTarefaComponent {
 
   resetarVariaveis() {
     this.edicao = false;
-    this.coluna_id = 0;
     this.tarefa = this.inicializarTarefa();
     this.preencherCampos(this.tarefa);
   }

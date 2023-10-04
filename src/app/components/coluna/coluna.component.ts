@@ -41,7 +41,7 @@ export class ColunaComponent {
     this.modal.abrir(coluna_id);
   }
 
-  abrirModalEdicao(coluna_id: number, tarefa: Tarefa) {
-    this.modal.abrirModoEdicao(coluna_id, tarefa);
+  abrirModalEdicao(tarefa: Tarefa) {
+    this.modal.abrirModoEdicao(tarefa);
   }
 }
