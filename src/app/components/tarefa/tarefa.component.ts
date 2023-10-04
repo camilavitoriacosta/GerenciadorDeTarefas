@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Tarefa } from 'src/app/models/Tarefa';
 import { TarefaService } from 'src/app/services/tarefa.service';
@@ -10,6 +10,7 @@ import { TarefaService } from 'src/app/services/tarefa.service';
 })
 export class TarefaComponent {
   @Input() tarefa!: Tarefa;
+  @Output() abrirModal: EventEmitter<any> = new EventEmitter();
   formTarefaFinalizada!: FormGroup;
 
   ngOnInit() {
@@ -24,5 +25,9 @@ export class TarefaComponent {
   onSubmit() {
     this.tarefa.finalizada = this.formTarefaFinalizada.controls['finalizada'].value;
     this.tarefaService.put(this.tarefa).subscribe((tarefa) => (this.tarefa = tarefa));
+  }
+
+  handleAbrirModal() {
+    this.abrirModal.emit();
   }
 }

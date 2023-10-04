@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Coluna } from 'src/app/models/Coluna';
+import { Tarefa } from 'src/app/models/Tarefa';
 import { ColunaService } from 'src/app/services/coluna.service';
 import { TarefaService } from 'src/app/services/tarefa.service';
+import { ModalTarefaComponent } from '../modal-tarefa/modal-tarefa.component';
 
 @Component({
   selector: 'app-coluna',
@@ -10,6 +12,7 @@ import { TarefaService } from 'src/app/services/tarefa.service';
 })
 
 export class ColunaComponent {
+  @ViewChild('modal') modal!: ModalTarefaComponent;
   colunas: Coluna[] = [];
 
   constructor(private colunaService: ColunaService, private tarefaService: TarefaService) {
@@ -17,8 +20,6 @@ export class ColunaComponent {
 
   ngOnInit() {
     this.obterColunas();
-    console.log(this.colunas);
-    
   }
 
   obterColunas(): void {
@@ -34,5 +35,13 @@ export class ColunaComponent {
         coluna.tarefas = tarefas
       })
     });
+  }
+
+  abrirModal(coluna_id: number) {
+    this.modal.abrir(coluna_id);
+  }
+
+  abrirModalEdicao(coluna_id: number, tarefa: Tarefa) {
+    this.modal.abrirModoEdicao(coluna_id, tarefa);
   }
 }

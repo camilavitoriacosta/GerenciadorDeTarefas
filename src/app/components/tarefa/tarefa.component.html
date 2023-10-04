@@ -5,8 +5,10 @@
     </form>
     <p class="tarefa-titulo"> {{tarefa.titulo}}</p>
   </div>
-  <p class="tarefa-data"> <i-bs name="calendar-event" width="75" height="75">
-    </i-bs> {{tarefa.data}}</p>
-  <p class="tarefa-horario" *ngIf="tarefa.horario != ''"><i-bs name="clock" width="75" height="75">
-    </i-bs> {{tarefa.horario}}</p>
+  <div (click)="handleAbrirModal()">
+    <p class="tarefa-data"> <i-bs name="calendar-event" width="75" height="75">
+      </i-bs> {{tarefa.data}}</p>
+    <p class="tarefa-horario" *ngIf="tarefa.horario != ''"><i-bs name="clock" width="75" height="75">
+      </i-bs> {{tarefa.horario}}</p>
+  </div>
 </div>

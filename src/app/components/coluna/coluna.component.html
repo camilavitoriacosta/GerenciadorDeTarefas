@@ -5,8 +5,8 @@
       <span class="coluna-numero-tarefas"> {{coluna.tarefas.length}} </span>
     </div>
     <app-botao-com-icone (click)="modal.abrir(coluna.id)"></app-botao-com-icone>
-    <app-tarefa *ngFor="let tarefa of coluna.tarefas" [tarefa]="tarefa"></app-tarefa>
+    <app-tarefa *ngFor="let tarefa of coluna.tarefas" [tarefa]="tarefa" (abrirModal)="abrirModalEdicao(coluna.id, tarefa)"></app-tarefa>
   </div>
 </section>
 
-<app-modal-tarefa #modal></app-modal-tarefa>
+<app-modal-tarefa #modal (atualizarLista)="obterColunas()"></app-modal-tarefa>

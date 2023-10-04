@@ -14,33 +14,57 @@
   "tarefas": [
     {
       "id": 1,
-      "titulo": "Tarefa 01",
-      "data": "29/09/2023",
-      "horario": "",
-      "finalizada": true,
-      "coluna_id": 1
+      "titulo": "Tarefa teste 2",
+      "horario": "19:53",
+      "data": "2023-10-03",
+      "finalizada": false,
+      "coluna_id": 2
     },
     {
       "id": 2,
       "titulo": "Tarefa 02",
-      "data": "29/09/2023",
       "horario": "",
+      "data": "2023-10-06",
       "finalizada": true,
       "coluna_id": 1
     },
     {
       "id": 3,
-      "titulo": "Tarefa 03",
-      "data": "29/09/2023",
+      "titulo": "Tarefa 0333",
       "horario": "09:30",
-      "finalizada": false,
+      "data": "2023-10-03",
+      "finalizada": true,
       "coluna_id": 2
     },
     {
       "id": 4,
       "titulo": "Tarefa 04",
-      "data": "29/09/2023",
       "horario": "",
+      "data": "2023-10-01",
+      "finalizada": false,
+      "coluna_id": 1
+    },
+    {
+      "id": 5,
+      "titulo": "Teste",
+      "horario": "15:52",
+      "data": "2023-10-11",
+      "finalizada": false,
+      "coluna_id": 1
+    },
+    {
+      "id": 6,
+      "titulo": "testeee",
+      "horario": "",
+      "data": "2023-10-02",
+      "finalizada": false,
+      "coluna_id": 1
+    },
+    {
+      "id": 7,
+      "titulo": "tarefaaaa",
+      "horario": "16:00",
+      "data": "2023-10-03",
       "finalizada": false,
       "coluna_id": 1
     }
